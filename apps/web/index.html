@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#4ecdc4">
+    <meta name="description" content="gunnchOS3k MLV Arcade - The Ultimate Mobile Gaming Hub & Social Platform">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/icon-57x57.png">
+    
+    <!-- Standard Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+    
+    <title>gunnchOS3k MLV Arcade</title>
+    
+    <style>
+        /* Complete PWA CSS */
+        :root {
+            --primary-color: #4ecdc4;
+            --secondary-color: #1a1a2e;
+            --accent-color: #ff6b6b;
+            --text-color: #ffffff;
+            --background-color: #1a1a2e;
+            --surface-color: #2a2a3a;
+            --border-color: #4a4a5a;
+            --success-color: #00ff88;
+            --warning-color: #ffaa00;
+            --error-color: #ff4444;
+            
+            /* Mobile Variables */
+            --font-size-base: 16px;
+            --font-size-large: 18px;
+            --font-size-xl: 20px;
+            --line-height-base: 1.6;
+            
+            /* Touch Target Variables */
+            --touch-target-min: 44px;
+            --touch-target-comfortable: 48px;
+            --touch-target-large: 56px;
+            
+            /* Spacing Variables */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--background-color) 0%, #2a2a3a 100%);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        /* PWA Container */
+        .pwa-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        .pwa-header {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .pwa-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .pwa-subtitle {
+            font-size: var(--font-size-large);
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        
+        /* Navigation */
+        .pwa-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--spacing-xl);
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .nav-tab {
+            padding: var(--spacing-md) var(--spacing-lg);
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-size: var(--font-size-base);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .nav-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .nav-tab:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Content Sections */
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        /* Game Hub */
+        .game-hub {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .hub-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .game-card {
+            background: var(--surface-color);
+            border: 3px solid var(--border-color);
+            border-radius: 16px;
+            padding: var(--spacing-lg);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: var(--touch-target-large);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .game-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(78, 205, 196, 0.3);
+        }
+        
+        .game-card:active {
+            transform: translateY(-2px);
+        }
+        
+        .game-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .game-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .game-description {
+            font-size: var(--font-size-base);
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .game-status {
+            font-size: 14px;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-weight: 500;
+            display: inline-block;
+        }
+        
+        .game-status.online {
+            background: var(--success-color);
+            color: var(--background-color);
+        }
+        
+        .game-status.offline {
+            background: var(--warning-color);
+            color: var(--background-color);
+        }
+        
+        /* Nintendo DS Multiplayer */
+        .nintendo-ds {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .ds-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .join-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .join-method {
+            background: var(--surface-color);
+            border: 3px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: var(--touch-target-large);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .join-method:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .method-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .method-title {
+            font-size: var(--font-size-large);
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .method-desc {
+            font-size: var(--font-size-base);
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        
+        /* Profile Hub */
+        .profile-hub {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .profile-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .profile-card {
+            background: var(--surface-color);
+            border: 3px solid var(--border-color);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            margin: 0 auto var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .profile-name {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .profile-bio {
+            font-size: var(--font-size-base);
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: var(--font-size-base);
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        
+        /* Social Feed */
+        .social-feed {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .feed-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .feed-item {
+            background: var(--surface-color);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .feed-item-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .feed-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            margin-right: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feed-username {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .feed-content {
+            font-size: var(--font-size-base);
+            color: var(--text-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .feed-time {
+            font-size: 12px;
+            color: var(--text-color);
+            opacity: 0.6;
+        }
+        
+        /* Status Messages */
+        .status-message {
+            text-align: center;
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-md);
+            font-weight: 500;
+        }
+        
+        .status-message.success {
+            background: var(--success-color);
+            color: var(--background-color);
+        }
+        
+        .status-message.error {
+            background: var(--error-color);
+            color: var(--text-color);
+        }
+        
+        .status-message.info {
+            background: var(--primary-color);
+            color: var(--background-color);
+        }
+        
+        /* Install Button */
+        .install-button {
+            background: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            border-radius: 8px;
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: var(--touch-target-min);
+            display: none;
+            margin: var(--spacing-md) auto;
+        }
+        
+        .install-button:hover {
+            background: #3bb5a8;
+            transform: translateY(-1px);
+        }
+        
+        .install-button:active {
+            transform: translateY(0);
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 480px) {
+            .pwa-container {
+                padding: var(--spacing-sm);
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .join-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Tablet Optimizations */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .pwa-container {
+                padding: var(--spacing-lg);
+            }
+        }
+        
+        /* Desktop Optimizations */
+        @media (min-width: 1024px) {
+            .pwa-container {
+                max-width: 1200px;
+                padding: var(--spacing-xl);
+            }
+        }
+        
+        /* Loading States */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100px;
+            font-size: var(--font-size-large);
+            color: var(--primary-color);
+        }
+        
+        .loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-top: 2px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: var(--spacing-sm);
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="pwa-container">
+        <!-- Header -->
+        <header class="pwa-header">
+            <h1 class="pwa-title">🎮 gunnchOS3k MLV Arcade</h1>
+            <p class="pwa-subtitle">The Ultimate Mobile Gaming Hub & Social Platform</p>
+        </header>
+        
+        <!-- Status Messages -->
+        <div id="status-messages"></div>
+        
+        <!-- Install Button -->
+        <button id="install-button" class="install-button">📱 Install App</button>
+        
+        <!-- Navigation -->
+        <nav class="pwa-nav">
+            <button class="nav-tab active" onclick="showTab('hub')">🏠 Hub</button>
+            <button class="nav-tab" onclick="showTab('games')">🎮 Games</button>
+            <button class="nav-tab" onclick="showTab('multiplayer')">📱 Multiplayer</button>
+            <button class="nav-tab" onclick="showTab('profile')">👤 Profile</button>
+            <button class="nav-tab" onclick="showTab('social')">💬 Social</button>
+        </nav>
+        
+        <!-- Hub Content -->
+        <div id="hub-content" class="content-section active">
+            <section class="game-hub">
+                <h2 class="hub-title">🏠 Your Digital Home</h2>
+                <div class="games-grid">
+                    <div class="game-card" onclick="launchGame('anime-aggressors')">
+                        <div class="game-icon">⚔️</div>
+                        <div class="game-title">Anime Aggressors</div>
+                        <div class="game-description">Shōnen-style PvP arena brawler with Nintendo DS simple multiplayer</div>
+                        <span class="game-status online">Online</span>
+                    </div>
+                    
+                    <div class="game-card" onclick="launchGame('3k-mlv')">
+                        <div class="game-icon">🏠</div>
+                        <div class="game-title">3k MLV</div>
+                        <div class="game-description">My Little Vicinity - Cozy multiplayer hub for friends and projects</div>
+                        <span class="game-status online">Online</span>
+                    </div>
+                    
+                    <div class="game-card" onclick="openProfile()">
+                        <div class="game-icon">👤</div>
+                        <div class="game-title">Profile Hub</div>
+                        <div class="game-description">Manage your avatar, bio, links, and preferences</div>
+                        <span class="game-status online">Online</span>
+                    </div>
+                    
+                    <div class="game-card" onclick="openSocial()">
+                        <div class="game-icon">💬</div>
+                        <div class="game-title">Social Feed</div>
+                        <div class="game-description">Connect with friends and discover new players</div>
+                        <span class="game-status online">Online</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Games Content -->
+        <div id="games-content" class="content-section">
+            <section class="game-hub">
+                <h2 class="hub-title">🎮 Your Games</h2>
+                <div class="games-grid">
+                    <div class="game-card" onclick="launchGame('anime-aggressors')">
+                        <div class="game-icon">⚔️</div>
+                        <div class="game-title">Anime Aggressors</div>
+                        <div class="game-description">3D fighting game with tap-to-connect multiplayer</div>
+                        <span class="game-status online">Ready to Play</span>
+                    </div>
+                    
+                    <div class="game-card" onclick="launchGame('3k-mlv')">
+                        <div class="game-icon">🏠</div>
+                        <div class="game-title">3k MLV</div>
+                        <div class="game-description">Virtual neighborhood for friends and project showcase</div>
+                        <span class="game-status online">Ready to Play</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Multiplayer Content -->
+        <div id="multiplayer-content" class="content-section">
+            <section class="nintendo-ds">
+                <h2 class="ds-title">📱 Nintendo DS Simple Multiplayer</h2>
+                <div class="join-methods">
+                    <div class="join-method" onclick="nfcJoin()">
+                        <div class="method-icon">📱</div>
+                        <div class="method-title">NFC Tap</div>
+                        <div class="method-desc">Tap phones together to join games</div>
+                    </div>
+                    
+                    <div class="join-method" onclick="bluetoothJoin()">
+                        <div class="method-icon">📡</div>
+                        <div class="method-title">Bluetooth</div>
+                        <div class="method-desc">Connect via Bluetooth</div>
+                    </div>
+                    
+                    <div class="join-method" onclick="localJoin()">
+                        <div class="method-icon">🌐</div>
+                        <div class="method-title">Local Network</div>
+                        <div class="method-desc">Same WiFi network</div>
+                    </div>
+                    
+                    <div class="join-method" onclick="qrJoin()">
+                        <div class="method-icon">📷</div>
+                        <div class="method-title">QR Code</div>
+                        <div class="method-desc">Scan QR code to join</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Profile Content -->
+        <div id="profile-content" class="content-section">
+            <section class="profile-hub">
+                <h2 class="profile-title">👤 Your Profile</h2>
+                <div class="profile-card">
+                    <div class="profile-avatar">👤</div>
+                    <div class="profile-name">gunnchOS3k</div>
+                    <div class="profile-bio">AI enthusiast, developer, and gaming hub creator</div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">42</div>
+                            <div class="stat-label">Games Played</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">18</div>
+                            <div class="stat-label">Friends</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Social Content -->
+        <div id="social-content" class="content-section">
+            <section class="social-feed">
+                <h2 class="feed-title">💬 Social Feed</h2>
+                <div class="feed-item">
+                    <div class="feed-item-header">
+                        <div class="feed-avatar">🤖</div>
+                        <span class="feed-username">gunnchAI3k</span>
+                    </div>
+                    <div class="feed-content">Welcome to your digital home! All your games and projects are now accessible from one place.</div>
+                    <div class="feed-time">2 minutes ago</div>
+                </div>
+                
+                <div class="feed-item">
+                    <div class="feed-item-header">
+                        <div class="feed-avatar">⚔️</div>
+                        <span class="feed-username">Anime Aggressors</span>
+                    </div>
+                    <div class="feed-content">New update available! Enhanced mobile controls and Nintendo DS simple multiplayer.</div>
+                    <div class="feed-time">5 minutes ago</div>
+                </div>
+                
+                <div class="feed-item">
+                    <div class="feed-item-header">
+                        <div class="feed-avatar">🏠</div>
+                        <span class="feed-username">3k MLV</span>
+                    </div>
+                    <div class="feed-content">Your virtual neighborhood is ready! Connect with friends and showcase your projects.</div>
+                    <div class="feed-time">10 minutes ago</div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- PWA JavaScript -->
+    <script>
+        // PWA Features
+        class MLVArcadePWA {
+            constructor() {
+                this.init();
+            }
+            
+            init() {
+                this.setupPWA();
+                this.setupNavigation();
+                this.setupGameLauncher();
+                this.setupMultiplayer();
+                this.setupProfile();
+                this.setupSocial();
+            }
+            
+            setupPWA() {
+                // Register service worker
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then(registration => {
+                            console.log('🎮 MLV Arcade Service Worker registered:', registration);
+                        })
+                        .catch(error => {
+                            console.log('❌ Service Worker registration failed:', error);
+                        });
+                }
+                
+                // Handle install prompt
+                let deferredPrompt;
+                window.addEventListener('beforeinstallprompt', (e) => {
+                    e.preventDefault();
+                    deferredPrompt = e;
+                    this.showInstallButton();
+                });
+                
+                // Handle app installed
+                window.addEventListener('appinstalled', () => {
+                    console.log('📱 MLV Arcade installed successfully!');
+                    this.hideInstallButton();
+                });
+            }
+            
+            setupNavigation() {
+                // Navigation is handled by showTab function
+            }
+            
+            setupGameLauncher() {
+                // Game launcher functionality
+            }
+            
+            setupMultiplayer() {
+                // Nintendo DS simple multiplayer
+            }
+            
+            setupProfile() {
+                // Profile management
+            }
+            
+            setupSocial() {
+                // Social features
+            }
+            
+            showInstallButton() {
+                const installButton = document.getElementById('install-button');
+                if (installButton) {
+                    installButton.style.display = 'block';
+                    installButton.addEventListener('click', () => {
+                        if (deferredPrompt) {
+                            deferredPrompt.prompt();
+                            deferredPrompt.userChoice.then((choiceResult) => {
+                                if (choiceResult.outcome === 'accepted') {
+                                    console.log('📱 User accepted the install prompt');
+                                } else {
+                                    console.log('📱 User dismissed the install prompt');
+                                }
+                                deferredPrompt = null;
+                            });
+                        }
+                    });
+                }
+            }
+            
+            hideInstallButton() {
+                const installButton = document.getElementById('install-button');
+                if (installButton) {
+                    installButton.style.display = 'none';
+                }
+            }
+        }
+        
+        // Global functions
+        function showTab(tabName) {
+            // Hide all tabs
+            const contents = document.querySelectorAll('.content-section');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab
+            const selectedContent = document.getElementById(`${tabName}-content`);
+            const selectedTab = document.querySelector(`[onclick="showTab('${tabName}')"]`);
+            
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+            
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+        }
+        
+        function launchGame(gameId) {
+            const games = {
+                'anime-aggressors': {
+                    name: 'Anime Aggressors',
+                    url: 'https://gunnchOS3k.github.io/anime-aggressors/',
+                    description: '3D fighting game with Nintendo DS simple multiplayer'
+                },
+                '3k-mlv': {
+                    name: '3k MLV',
+                    url: 'https://gunnchOS3k.github.io/3k-mlv/',
+                    description: 'Virtual neighborhood for friends and project showcase'
+                }
+            };
+            
+            const game = games[gameId];
+            if (game) {
+                showStatusMessage(`🎮 Launching ${game.name}...`, 'info');
+                setTimeout(() => {
+                    window.open(game.url, '_blank');
+                }, 1000);
+            }
+        }
+        
+        function openProfile() {
+            showTab('profile');
+        }
+        
+        function openSocial() {
+            showTab('social');
+        }
+        
+        function nfcJoin() {
+            showStatusMessage('📱 Tap phones together to join game!', 'info');
+        }
+        
+        function bluetoothJoin() {
+            showStatusMessage('📡 Searching for Bluetooth games...', 'info');
+        }
+        
+        function localJoin() {
+            showStatusMessage('🌐 Scanning local network for games...', 'info');
+        }
+        
+        function qrJoin() {
+            showStatusMessage('📷 Open camera to scan QR code', 'info');
+        }
+        
+        function showStatusMessage(message, type = 'info') {
+            const statusContainer = document.getElementById('status-messages');
+            if (statusContainer) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `status-message ${type}`;
+                messageDiv.textContent = message;
+                statusContainer.appendChild(messageDiv);
+                
+                // Auto-remove after 5 seconds
+                setTimeout(() => {
+                    messageDiv.remove();
+                }, 5000);
+            }
+        }
+        
+        // Initialize PWA
+        document.addEventListener('DOMContentLoaded', () => {
+            new MLVArcadePWA();
+        });
+    </script>
+</body>
+</html>
