@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "gunnchOS3k MLV Arcade",
+    "slug": "gunnchos3k-mlv-arcade",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a2e"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gunnchos3k.mlvarcade",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to scan QR codes for game joining and friend discovery.",
+        "NSMicrophoneUsageDescription": "This app uses the microphone for voice chat in multiplayer games.",
+        "NSLocationWhenInUseUsageDescription": "This app uses location to discover nearby players and games.",
+        "NSBluetoothAlwaysUsageDescription": "This app uses Bluetooth for local multiplayer connections.",
+        "NSBluetoothPeripheralUsageDescription": "This app uses Bluetooth for local multiplayer connections.",
+        "NFCReaderUsageDescription": "This app uses NFC for tap-to-connect game joining and friend discovery."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1a1a2e"
+      },
+      "package": "com.gunnchos3k.mlvarcade"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-camera",
+      "expo-barcode-scanner",
+      "expo-nfc",
+      "expo-bluetooth",
+      "expo-location",
+      "expo-notifications",
+      "expo-haptics"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id-here"
+      }
+    }
+  }
+}

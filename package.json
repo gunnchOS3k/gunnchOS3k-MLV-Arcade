@@ -1,0 +1,66 @@
+{
+  "name": "gunnchos3k-mlv-arcade",
+  "version": "1.0.0",
+  "description": "gunnchOS3k MLV Arcade - The Ultimate Mobile Gaming Hub & Social Platform",
+  "main": "index.js",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "android:dev": "cd apps/android && npm run dev",
+    "android:build": "cd apps/android && npm run build",
+    "ios:dev": "cd apps/ios && npm run dev",
+    "ios:build": "cd apps/ios && npm run build",
+    "windows:dev": "cd apps/windows && npm run dev",
+    "windows:build": "cd apps/windows && npm run build",
+    "web:dev": "cd apps/web && npm run dev",
+    "web:build": "cd apps/web && npm run build",
+    "deploy:android": "cd apps/android && npm run deploy",
+    "deploy:ios": "cd apps/ios && npm run deploy",
+    "deploy:windows": "cd apps/windows && npm run deploy",
+    "deploy:web": "cd apps/web && npm run deploy",
+    "deploy:all": "npm run deploy:android && npm run deploy:ios && npm run deploy:windows && npm run deploy:web"
+  },
+  "keywords": [
+    "gaming",
+    "multiplayer",
+    "anime",
+    "fighting",
+    "social",
+    "mobile",
+    "arcade",
+    "nintendo-ds",
+    "tap-to-connect",
+    "3d-fighting",
+    "virtual-neighborhood",
+    "friend-discovery",
+    "cross-platform"
+  ],
+  "author": "gunnchOS3k",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "turbo": "^1.10.0",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gunnchOS3k/gunnchOS3k-MLV-Arcade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gunnchOS3k/gunnchOS3k-MLV-Arcade/issues"
+  },
+  "homepage": "https://github.com/gunnchOS3k/gunnchOS3k-MLV-Arcade#readme"
+}
