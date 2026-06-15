@@ -340,3 +340,4 @@ self.addEventListener('notificationclick', (event) => {
 });
 
 console.log('🎮 MLV Arcade Service Worker loaded successfully!');
+

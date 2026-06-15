@@ -106,3 +106,4 @@ echo "✅ MLV Arcade web app deployed successfully!"
 echo "🌐 Your app will be available at: https://gunnchOS3k.github.io/gunnchOS3k-MLV-Arcade/"
 echo "📱 Share this URL with your dorm mates for testing!"
 echo "🎮 Ready for user feedback and iteration!"
+
