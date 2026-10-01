@@ -1,0 +1,21 @@
+{
+  "repo": "gunnchOS3k-MLV-Arcade",
+  "productName": "MLV Arcade",
+  "family": "3k MLV",
+  "classification": "META_DIRECTORY_WORKER",
+  "acceptedSha": "666a204f2047cabc6dfea5094222afa317c3ee52",
+  "status": "STAGING_WORKER",
+  "summary": "Directory for the MLV arcade effort: a cross-platform gaming catalog, not a running arcade runtime.",
+  "capabilities": [
+    "Browse what the arcade repository is for",
+    "Open the source repository"
+  ],
+  "limitations": [
+    "This Worker is not the arcade game client",
+    "Edge AI integration is not claimed as a live service"
+  ],
+  "sourceUrl": "https://github.com/gunnchOS3k/gunnchOS3k-MLV-Arcade",
+  "returnUrlEnv": "GUNNCHOS_PORTAL_URL",
+  "returnUrl": "https://gunnchos-site.gunnchos-finds.workers.dev",
+  "workerName": "gunnchos-mlv-arcade"
+}
