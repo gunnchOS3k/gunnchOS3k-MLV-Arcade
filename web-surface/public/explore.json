@@ -1,0 +1,129 @@
+{
+  "schema": "gunnchos.surfacekit.v2",
+  "measured_topology": false,
+  "diagram_note": "Reading aid built from repository headings. It is not a measured topology and it is not a live system.",
+  "nodes": [
+    {
+      "id": "overview",
+      "label": "Overview"
+    },
+    {
+      "id": "why-app-store-distribution",
+      "label": "\ud83c\udfaf **Why App Store Distribution?**"
+    },
+    {
+      "id": "repository-structure",
+      "label": "\ud83c\udfd7\ufe0f **Repository Structure**"
+    },
+    {
+      "id": "core-features",
+      "label": "\ud83c\udfae **Core Features**"
+    }
+  ],
+  "rows": [
+    {
+      "source": "README.md",
+      "scenario_id": "Overview",
+      "site_id": "3k MLV",
+      "ethical_framing": "# \ud83c\udfae gunnchOS3k MLV Arcade - App Store Distribution **The Ultimate Mobile Gaming Hub & Social Platform** gunnchOS3k MLV Arcade is the **native app store version** of the gunnchAI3k ecosystem, providing **Anime Aggressors**, **3k MLV**, and **unified profile management** through native mobile apps with enhanced features and app store benefits."
+    },
+    {
+      "source": "README.md",
+      "scenario_id": "\ud83c\udfaf **Why App Store Distribution?**",
+      "site_id": "3k MLV",
+      "ethical_framing": "### **\ud83d\udcf1 App Store Benefits:** - **Discoverability** - Users find us through app store search - **Trust & Credibility** - Native apps feel more professional - **User Acquisition** - App store algorithms promote popular apps - **Push Notifications** - Native notifications for game invites, friend requests - **Deep Linking** - Direct links to specific games and features - **Native Performance** - Better performance than"
+    },
+    {
+      "source": "README.md",
+      "scenario_id": "\ud83c\udfd7\ufe0f **Repository Structure**",
+      "site_id": "3k MLV",
+      "ethical_framing": "gunnchOS3k-MLV-Arcade/ \u251c\u2500\u2500 apps/ \u2502 \u251c\u2500\u2500 android/ # Android app (Google Play) \u2502 \u251c\u2500\u2500 ios/ # iOS app (Apple App Store) \u2502 \u251c\u2500\u2500 windows/ # Windows app (Microsoft Store) \u2502 \u2514\u2500\u2500 web/ # Web version (PWA) \u251c\u2500\u2500 packages/ \u2502 \u251c\u2500\u2500 shared/ # Shared code between platforms \u2502 \u251c\u2500\u2500 ui-kit/ # Cross-platform UI components \u2502 \u251c\u2500\u2500 game-engine/ # Game engine for Anime Aggressors \u2502 \u251c\u2500\u2500 mlv-hub/ # 3k MLV hub functionality \u2502 \u2514\u2500\u2500 multiplayer/ # Ninte"
+    },
+    {
+      "source": "README.md",
+      "scenario_id": "\ud83c\udfae **Core Features**",
+      "site_id": "3k MLV",
+      "ethical_framing": "### **\ud83c\udfaf Anime Aggressors (Native)** - **3D Fighting Game** - Sh\u014dnen-style PvP arena brawler - **Nintendo DS Multiplayer** - Tap-to-connect, Bluetooth, local network - **Native Performance** - 60fps, optimized graphics, haptic feedback - **Offline Mode** - Play without internet connection - **Cloud Save** - Progress synced across devices ### **\ud83c\udfe0 3k MLV (My Little Vicinity)** - **Cozy Multiplayer Hub** - Virtual neighb"
+    },
+    {
+      "source": "README.md",
+      "scenario_id": "\ud83d\udcf1 **Platform-Specific Features**",
+      "site_id": "3k MLV",
+      "ethical_framing": "### **\ud83e\udd16 Android (Google Play)** - **Material Design** - Native Android UI/UX - **Google Play Games** - Achievements, leaderboards, cloud save - **Google Sign-In** - Easy authentication - **Android Auto** - Voice commands while driving - **Wear OS** - Companion app for smartwatches ### **\ud83c\udf4e iOS (Apple App Store)** - **iOS Design Guidelines** - Native iOS UI/UX - **Game Center** - Achievements, leaderboards, multiplayer"
+    },
+    {
+      "source": "README.md",
+      "scenario_id": "\ud83d\ude80 **App Store Strategy**",
+      "site_id": "3k MLV",
+      "ethical_framing": "### **\ud83d\udcc8 User Acquisition Funnel:** 1. **App Store Discovery** - Users find us through search 2. **Screenshots & Videos** - Showcase gameplay and features 3. **Reviews & Ratings** - Social proof and user feedback 4. **Featured Placement** - App store promotion 5. **Word of Mouth** - Users recommend to friends ### **\ud83c\udfaf Target Audiences:** - **Gamers** - Anime Aggressors players - **Creators** - 3k MLV project showcase u"
+    }
+  ],
+  "sources": [],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "body": "# \ud83c\udfae gunnchOS3k MLV Arcade - App Store Distribution **The Ultimate Mobile Gaming Hub & Social Platform** gunnchOS3k MLV Arcade is the **native app store version** of the gunnchAI3k ecosystem, providing **Anime Aggressors**, **3k MLV**, and **unified profile management** through native mobile apps with enhanced features and app store benefits."
+    },
+    {
+      "id": "why-app-store-distribution",
+      "title": "\ud83c\udfaf **Why App Store Distribution?**",
+      "body": "### **\ud83d\udcf1 App Store Benefits:** - **Discoverability** - Users find us through app store search - **Trust & Credibility** - Native apps feel more professional - **User Acquisition** - App store algorithms promote popular apps - **Push Notifications** - Native notifications for game invites, friend requests - **Deep Linking** - Direct links to specific games and features - **Native Performance** - Better performance than"
+    },
+    {
+      "id": "repository-structure",
+      "title": "\ud83c\udfd7\ufe0f **Repository Structure**",
+      "body": "gunnchOS3k-MLV-Arcade/ \u251c\u2500\u2500 apps/ \u2502 \u251c\u2500\u2500 android/ # Android app (Google Play) \u2502 \u251c\u2500\u2500 ios/ # iOS app (Apple App Store) \u2502 \u251c\u2500\u2500 windows/ # Windows app (Microsoft Store) \u2502 \u2514\u2500\u2500 web/ # Web version (PWA) \u251c\u2500\u2500 packages/ \u2502 \u251c\u2500\u2500 shared/ # Shared code between platforms \u2502 \u251c\u2500\u2500 ui-kit/ # Cross-platform UI components \u2502 \u251c\u2500\u2500 game-engine/ # Game engine for Anime Aggressors \u2502 \u251c\u2500\u2500 mlv-hub/ # 3k MLV hub functionality \u2502 \u2514\u2500\u2500 multiplayer/ # Ninte"
+    },
+    {
+      "id": "core-features",
+      "title": "\ud83c\udfae **Core Features**",
+      "body": "### **\ud83c\udfaf Anime Aggressors (Native)** - **3D Fighting Game** - Sh\u014dnen-style PvP arena brawler - **Nintendo DS Multiplayer** - Tap-to-connect, Bluetooth, local network - **Native Performance** - 60fps, optimized graphics, haptic feedback - **Offline Mode** - Play without internet connection - **Cloud Save** - Progress synced across devices ### **\ud83c\udfe0 3k MLV (My Little Vicinity)** - **Cozy Multiplayer Hub** - Virtual neighb"
+    },
+    {
+      "id": "platform-specific-features",
+      "title": "\ud83d\udcf1 **Platform-Specific Features**",
+      "body": "### **\ud83e\udd16 Android (Google Play)** - **Material Design** - Native Android UI/UX - **Google Play Games** - Achievements, leaderboards, cloud save - **Google Sign-In** - Easy authentication - **Android Auto** - Voice commands while driving - **Wear OS** - Companion app for smartwatches ### **\ud83c\udf4e iOS (Apple App Store)** - **iOS Design Guidelines** - Native iOS UI/UX - **Game Center** - Achievements, leaderboards, multiplayer"
+    },
+    {
+      "id": "app-store-strategy",
+      "title": "\ud83d\ude80 **App Store Strategy**",
+      "body": "### **\ud83d\udcc8 User Acquisition Funnel:** 1. **App Store Discovery** - Users find us through search 2. **Screenshots & Videos** - Showcase gameplay and features 3. **Reviews & Ratings** - Social proof and user feedback 4. **Featured Placement** - App store promotion 5. **Word of Mouth** - Users recommend to friends ### **\ud83c\udfaf Target Audiences:** - **Gamers** - Anime Aggressors players - **Creators** - 3k MLV project showcase u"
+    }
+  ],
+  "artifacts": [
+    "docs/APP_STORE_BENEFITS.md",
+    "docs/COMMUNITY_BUILDING_GUIDE.md",
+    "docs/CONTENT_CREATION_GUIDE.md",
+    "docs/DORM_USER_TESTING_GUIDE.md"
+  ],
+  "methods": "",
+  "cards": [
+    {
+      "title": "Overview",
+      "body": "# \ud83c\udfae gunnchOS3k MLV Arcade - App Store Distribution **The Ultimate Mobile Gaming Hub & Social Platform** gunnchOS3k MLV Arcade is the **native app store version** of the gunnchAI3k ecosystem, providing **Anime Aggressors**, **3k MLV**, and **unified profile management** through native mobile apps with enhanced features and app store benefits."
+    },
+    {
+      "title": "\ud83c\udfaf **Why App Store Distribution?**",
+      "body": "### **\ud83d\udcf1 App Store Benefits:** - **Discoverability** - Users find us through app store search - **Trust & Credibility** - Native apps feel more professional - **User Acquisition** - App store algorithms promote popular apps - **Push Notifications** - Native notifications for game invites, friend requests - **Deep Linking** - Direct links to specific games and features - **Native Performance** - Better performance than"
+    },
+    {
+      "title": "\ud83c\udfd7\ufe0f **Repository Structure**",
+      "body": "gunnchOS3k-MLV-Arcade/ \u251c\u2500\u2500 apps/ \u2502 \u251c\u2500\u2500 android/ # Android app (Google Play) \u2502 \u251c\u2500\u2500 ios/ # iOS app (Apple App Store) \u2502 \u251c\u2500\u2500 windows/ # Windows app (Microsoft Store) \u2502 \u2514\u2500\u2500 web/ # Web version (PWA) \u251c\u2500\u2500 packages/ \u2502 \u251c\u2500\u2500 shared/ # Shared code between platforms \u2502 \u251c\u2500\u2500 ui-kit/ # Cross-platform UI components \u2502 \u251c\u2500\u2500 game-engine/ # Game engine for Anime Aggressors \u2502 \u251c\u2500\u2500 mlv-hub/ # 3k MLV hub functionality \u2502 \u2514\u2500\u2500 multiplayer/ # Ninte"
+    },
+    {
+      "title": "\ud83c\udfae **Core Features**",
+      "body": "### **\ud83c\udfaf Anime Aggressors (Native)** - **3D Fighting Game** - Sh\u014dnen-style PvP arena brawler - **Nintendo DS Multiplayer** - Tap-to-connect, Bluetooth, local network - **Native Performance** - 60fps, optimized graphics, haptic feedback - **Offline Mode** - Play without internet connection - **Cloud Save** - Progress synced across devices ### **\ud83c\udfe0 3k MLV (My Little Vicinity)** - **Cozy Multiplayer Hub** - Virtual neighb"
+    },
+    {
+      "title": "\ud83d\udcf1 **Platform-Specific Features**",
+      "body": "### **\ud83e\udd16 Android (Google Play)** - **Material Design** - Native Android UI/UX - **Google Play Games** - Achievements, leaderboards, cloud save - **Google Sign-In** - Easy authentication - **Android Auto** - Voice commands while driving - **Wear OS** - Companion app for smartwatches ### **\ud83c\udf4e iOS (Apple App Store)** - **iOS Design Guidelines** - Native iOS UI/UX - **Game Center** - Achievements, leaderboards, multiplayer"
+    },
+    {
+      "title": "\ud83d\ude80 **App Store Strategy**",
+      "body": "### **\ud83d\udcc8 User Acquisition Funnel:** 1. **App Store Discovery** - Users find us through search 2. **Screenshots & Videos** - Showcase gameplay and features 3. **Reviews & Ratings** - Social proof and user feedback 4. **Featured Placement** - App store promotion 5. **Word of Mouth** - Users recommend to friends ### **\ud83c\udfaf Target Audiences:** - **Gamers** - Anime Aggressors players - **Creators** - 3k MLV project showcase u"
+    }
+  ],
+  "runtime_mode": "PRECOMPUTED",
+  "runtime_boot": false
+}
